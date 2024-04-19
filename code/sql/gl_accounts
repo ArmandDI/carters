@@ -14,7 +14,7 @@ SELECT
 	ma.[consolidationmainaccount] AS [consolidation_main_account],
 	ma.[name] AS [gl_account_name],
 	mac.[accountcategory] AS [gl_account_category],
-	ma.[type] AS [gl_account_type],
+	ma.[type] AS [gl_account_type]
 FROM mainaccount ma 
 	LEFT JOIN mainaccountcategory mac 
 		ON ma.[accountcategoryref] = mac.[accountcategoryref]
