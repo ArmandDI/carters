@@ -1,0 +1,4 @@
+# Add any job-specific files to be ignored or included.
+# To include a file that would otherwise be ignored due to its extention, use an exclamation mark, e.g. '!dashboard1.pbix'.
+# Note: If an entire directory is ignored, then keeping a single file in that directory will not work.
+# 	The directory will need to be removed from blanket ignore rules.
