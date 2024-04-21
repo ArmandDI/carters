@@ -12,6 +12,6 @@
 
 
 SELECT 
-	 [journalname] AS [gl_source_code]
+	[journalname] AS [gl_source_code]
 	,[name]	AS [gl_source_name]
 FROM ledgerjournalname
