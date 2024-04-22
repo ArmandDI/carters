@@ -11,9 +11,11 @@
 -- =============================================
 
 SELECT 
-	 [recid] AS [department_key]
-	--,[OMOPERATINGUNITNUMBER] AS [department_code] -- No Department code found in fabric data - atleast none that align to codes in power bi output.
-	,[name] AS [department_name]
-	--,CONCAT([OMOPERATINGUNITNUMBER], ' ', [name]) AS [department_code_name] -- removed as a result of not having a department code.
-	--,DataLakeModified_DateTime AS [_updated_date]
-FROM dirpartytable
+    om.[omoperatingunitnumber]  AS  [department_code] 
+    ,dp.[name]                  AS  [department_name]
+FROM [omoperatingunit] om 
+INNER JOIN [dirpartytable] dp 
+    ON om.[recid] = dp.[recid]
+WHERE [omoperatingunittype] = 1 -- Needed for filtering to departments
+ORDER BY 1
+;
