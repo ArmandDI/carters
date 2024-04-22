@@ -15,3 +15,7 @@ SELECT
 	[journalname] AS [gl_source_code]
 	,[name]	AS [gl_source_name]
 FROM ledgerjournalname
+WHERE 	
+	-- Not deleted record
+	IsDelete IS NULL
+
