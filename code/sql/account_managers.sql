@@ -12,16 +12,16 @@
 
 WITH hcmposition_cte AS (
 	SELECT
-		[recid] AS [hcmposition_recid], -- RC
-		[positionid], -- RC
-		[ctr_site] -- RC
+		[recid] AS [hcmposition_recid],
+		[positionid],
+		[ctr_site]
 	FROM hcmposition
 	WHERE [IsDelete] IS NULL
 ),
 hcmpositiondetail_cte AS (
 	SELECT
-		[recid] AS [hcmpositiondetail_recid], -- RC
-		[description],	-- RC
+		[recid] AS [hcmpositiondetail_recid],
+		[description],
 		[job],
 		[position]
 	FROM hcmpositiondetail
@@ -29,7 +29,7 @@ hcmpositiondetail_cte AS (
 ),
 hcmpositionworkerassignment_cte AS (
 	SELECT 
-		[recid] AS [hcmpositionworker_recid], -- RC
+		[recid] AS [hcmpositionworker_recid],
 		[position],
 		[worker]
 	FROM hcmpositionworkerassignment
@@ -37,10 +37,10 @@ hcmpositionworkerassignment_cte AS (
 ),
 hcmworker_cte AS (
 	SELECT 
-		[recid] AS [hcmworker_recid], -- RC
+		[recid] AS [hcmworker_recid],
 		[person],
-		[personnelnumber], -- RC
-		[ctr_empcusrelid] -- RC
+		[personnelnumber],
+		[ctr_empcusrelid]
 	FROM hcmworker
 	WHERE [IsDelete] IS NULL
 )
@@ -62,6 +62,8 @@ FROM hcmworker_cte hwx -- some account manager records do not have a name/email 
 	--LEFT JOIN branches b ON hpx.ctr_site = b.branch_code 
 WHERE hpd.[description] = 'Account Manager' and dpt.[IsDelete] IS NULL
 ;
+
+
 
 
 
